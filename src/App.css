@@ -1,27 +1,37 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  display: grid; /* Set the root element as a grid container */
+  grid-template-rows: auto 1fr auto; /* Define grid template rows for header, dashboard, and footer */
+  height: 100vh; /* Ensure the grid container fills the entire viewport height */
   text-align: center;
 }
 
-
+body {
+  background-color: white; /* Set the background color to red */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
 
 .header {
-  background-color: #f0f0f0; 
+  background-color: white;
+  width:100%;
+  position: fixed; 
+  z-index: 1000;
+  border-bottom: 1px solid #ccc;
 }
 
 .dashboard {
-  background-color: #e0e0e0; 
-    width: 100%;
-    
+
+  position: absolute;
+  top: calc(15% + 1px);
+  left: 0;
+  width: 100%;
 }
 
 .footer {
-  background-color: #f0f0f0; 
+  background-color: white;
+  border-top: 1px solid #ccc;
   display: flex; 
-  justify-content: space-between; 
-  padding: 10px;
+  justify-content: center; 
   position: fixed; 
   bottom: 0;
   left: 0;
@@ -34,8 +44,6 @@
   height: 64px; 
 }
 
-
-
 .footer-button {
   background-color: transparent; 
   border: none; 
@@ -43,8 +51,13 @@
   font-weight: bold;
   font-size: 1em;
   margin-top: 5px;
+  margin: 25px;
 }
 
+.no-padding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
 
 .search-bar {
   width: 100%; 
@@ -53,7 +66,12 @@
   margin-bottom: 1vh;
   text-align: center;
   border-radius: 10px;
-  border-width: 1px;
+  border:0;
+  background-color: #f0f0f0;
+}
+
+*:focus {
+  outline: none;
 }
 
 .search-bar button {
@@ -62,31 +80,27 @@
 }
 
 .product-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center; 
+  height: calc(70vh);
 }
 
 .product-card {
-  position: relative; 
-  width: 200px; 
-  height: 200px;
-  background-color: #ffffff; 
-  border: 1px solid #ccc; 
-  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
-  padding: 10px;
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden; /* Hide overflowed content */
+
 }
 
 .product-details {
-  flex-grow: 1; 
+  flex-grow: 1;
   background-color: red;
-  border-radius: 10px; 
-
+  border-radius: 0 0 10px 10px; /* Adjusted border radius to match card */
 }
+
+
 
 .add-to-cart-btn {
   position: absolute; 
