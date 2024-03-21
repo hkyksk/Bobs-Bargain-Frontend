@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap'
 
 const RecommendedList = () => {
   return (
@@ -37,7 +37,7 @@ const RecommendedList = () => {
         </Col>
       </Row>
     </Container>
-  );
-};
+  )
+}
 
-export default RecommendedList;
+export default RecommendedList

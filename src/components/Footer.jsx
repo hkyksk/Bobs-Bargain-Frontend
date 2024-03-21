@@ -12,14 +12,14 @@ const Footer = ({ onButtonClick }) => {
           <p>Home</p>
         </Link>
       </button>
-
-      <button className="footer-button" onClick={() => onButtonClick('cart')}>
+      <div className="footer-gap">
+      <button className="footer-button-cart" onClick={() => onButtonClick('cart')}>
         <Link to="/cart" className="footer-link">
           <img src={CartSVG} alt="Cart" className="footer-icon" />
           <p>Cart</p>
         </Link>
       </button>
-
+      </div> 
       <button className="footer-button" onClick={() => onButtonClick('login')}>
         <Link to="/login" className="footer-link">
           <img src={ProfileSVG} alt="Profile" className="footer-icon" />
