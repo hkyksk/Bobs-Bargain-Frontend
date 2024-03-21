@@ -1,10 +1,30 @@
+import { useState } from 'react'
 import Searchbar from './Header/Searchbar'
+import logo from '../assets/logo.svg'
 
 const Header = () => {
+  const [isWobbling, setIsWobbling] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsWobbling(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsWobbling(false)
+  }
+
   return (
     <div className="header">
-      <h1>Bobs Bargain</h1>
-      <Searchbar />
+      <div className="header-content">
+        <h1>Bobs</h1>
+        <div className="logo-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <img src={logo} alt="Search" className={isWobbling ? "logo wobble" : "logo"} />
+        </div>
+        <h1>Bargain</h1>
+      </div>
+      <div className="searchbar-container">
+        <Searchbar />
+      </div>
     </div>
   )
 }

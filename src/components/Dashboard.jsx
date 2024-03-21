@@ -1,12 +1,27 @@
 import RecommendedFeed from './Dashboard/RecommendedFeed/RecommendedFeed'
 import CategoryFeed from './Dashboard/CategoryFeed/CategoryFeed'
+import Cart from './Dashboard/Cart.jsx'
+import ViewProfile from './Dashboard/ViewProfile.jsx'
 
-const Dashboard = () => {
+const Dashboard = ({ selectedComponent }) => {
+
   return (
     <div className="dashboard">
-      <h2>Dashboard</h2>
-      <RecommendedFeed />
-      <CategoryFeed />
+
+      {selectedComponent === 'home' && (
+        <>
+          <RecommendedFeed />
+          <CategoryFeed />
+        </>
+      )}
+      {selectedComponent === 'login' && <ViewProfile />}
+      {selectedComponent === 'cart' && <Cart />}
+      {selectedComponent !== 'home' && selectedComponent !== 'login' && selectedComponent !== 'cart' && (
+        <>
+          <RecommendedFeed />
+          <CategoryFeed />
+        </>
+      )}
     </div>
   )
 }
