@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap'
 import SignUpForm from './Welcome/SignUpForm'
 import Login from './Welcome/Login'
 
-const Welcome = () => {
+const Welcome = ({ onButtonClick, onSignUp }) => {
   const [showForm, setShowForm] = useState(false)
   const [showLogin, setShowLogin] = useState(false)
 
@@ -29,7 +29,7 @@ const Welcome = () => {
           Sign Up
         </Button>
       </div>
-      {showForm && (showLogin ? <Login /> : <SignUpForm />)}
+      {showForm && (showLogin ? <Login /> : <SignUpForm onSignUp={onSignUp} />)}
     </div>
   )
 }

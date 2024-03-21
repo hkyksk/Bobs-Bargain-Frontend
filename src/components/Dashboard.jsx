@@ -1,9 +1,9 @@
 import RecommendedFeed from './Dashboard/RecommendedFeed/RecommendedFeed'
 import CategoryFeed from './Dashboard/CategoryFeed/CategoryFeed'
 import Cart from './Dashboard/Cart.jsx'
-import ViewProfile from './Dashboard/ViewProfile.jsx'
+import Welcome from './Dashboard/Welcome.jsx'
 
-const Dashboard = ({ selectedComponent }) => {
+const Dashboard = ({ selectedComponent, onButtonClick, onSignUp }) => {
 
   return (
     <div className="dashboard">
@@ -14,7 +14,7 @@ const Dashboard = ({ selectedComponent }) => {
           <CategoryFeed />
         </>
       )}
-      {selectedComponent === 'login' && <ViewProfile />}
+      {selectedComponent === 'login' && <Welcome onButtonClick={onButtonClick} onSignUp={onSignUp} />}
       {selectedComponent === 'cart' && <Cart />}
       {selectedComponent !== 'home' && selectedComponent !== 'login' && selectedComponent !== 'cart' && (
         <>

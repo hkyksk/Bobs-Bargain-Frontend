@@ -3,10 +3,9 @@ import searchIcon from '../../assets/search.svg'
 const Searchbar = () => {
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      // Perform search action here
       console.log('Search triggered!')
     }
-  };
+  }
 
   return (
     <div className="input-icons">
