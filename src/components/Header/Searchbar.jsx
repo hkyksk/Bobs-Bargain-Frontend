@@ -1,4 +1,4 @@
-import searchIcon from '../../assets/search.svg';
+import searchIcon from '../../assets/search.svg'
 
 const Searchbar = () => {
   const handleKeyDown = (event) => {
