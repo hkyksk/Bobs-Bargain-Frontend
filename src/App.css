@@ -55,7 +55,7 @@ body {
   background-color: white;
 
   border-bottom-right-radius: 50%; 
-  border-bottom-left-radius: 50%; /
+  border-bottom-left-radius: 50%; 
 }
 
 .no-bullets {
@@ -73,7 +73,7 @@ body {
 
 .footer-icon:active {
   color:yellow;
-  border-color: yellow; /* Border color when element is active/selected */
+  border-color: yellow; /
 }
 
 .footer-button {
@@ -320,16 +320,17 @@ input[type='button'] {
 
 
 .profile-nav li {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; 
+}
 
 .logo {
   width: 72px;
   height: 72px;
-  transition: transform 0.2s ease-in-out; 
+  transition: transform 0.2s ease-in-out;
 }
 
 .logo:hover {
-  animation: wobble 1.5s infinite;
+  animation: wobble 1.5s infinite; 
 }
 
 @keyframes wobble {
@@ -342,7 +343,5 @@ input[type='button'] {
 
 .header-content {
   display: flex;
+  align-items: center;
 }
-
-
-
