@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import ProductImage from '../../assets/images/Alpro-Blueberry-Soyghurt_Iconic.jpg';
+import { useState } from 'react'
+import { Container, Row, Col } from 'react-bootstrap'
+import ProductImage from '../../assets/images/Alpro-Blueberry-Soyghurt_Iconic.jpg'
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState([])
 
   const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
-  };
+    setCartItems([...cartItems, product])
+  }
 
   return (
     <Container>
@@ -24,7 +24,7 @@ const Cart = () => {
         </ul>
       </div>
     </Container>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart
