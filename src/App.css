@@ -343,5 +343,6 @@ input[type='button'] {
 
 .header-content {
   display: flex;
-  align-items: center;
+  align-items: center; 
+  justify-content: center; 
 }
