@@ -1,12 +1,29 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import ProfileSVG from '../../assets/profile.svg';
+import { useState } from 'react'
+import ProfileSVG from '../../assets/profile.svg'
+import EditProfile from './ViewProfile/EditProfile'
+import ViewOrderHistory from './ViewProfile/ViewOrderHistory'
+import ViewWishList from './ViewProfile/ViewWishList'
 
-function ViewProfile() {
-  // Dummy data
-  const firstName = "John";
-  const lastName = "Doe";
-  const address = "123 Main St, City";
+function ViewProfile({ userData, handleLogout }) {
+  const [activeComponent, setActiveComponent] = useState(null)
+
+  if (!userData) return null
+
+  const { firstName, lastName, address } = userData
+
+  let activeContent = null
+
+  const handleSelectComponent = (component) => {
+    setActiveComponent(component)
+  }
+
+  if (activeComponent === 'editprofile') {
+    activeContent = <EditProfile userData={userData} />
+  } else if (activeComponent === 'orderhistory') {
+    activeContent = <ViewOrderHistory />
+  } else if (activeComponent === 'viewwishlist') {
+    activeContent = <ViewWishList />
+  }
 
   return (
     <div className="profile-container">
@@ -19,19 +36,33 @@ function ViewProfile() {
       </div>
       <nav className="profile-nav">
         <ul className="no-bullets">
-          <li>
-            <Link to="/editprofile">Edit Profile</Link>
-          </li>
-          <li>
-            <Link to="/orderhistory">View Order History</Link>
-          </li>
-          <li>
-            <Link to="/viewwishlist">View Wishlist</Link>
-          </li>
+          {userData && (
+            <>
+              <li>
+                {activeComponent !== 'editprofile' && (
+                  <button onClick={() => handleSelectComponent('editprofile')} className="link-button">Edit Profile</button>
+                )}
+              </li>
+              <li>
+                {activeComponent !== 'orderhistory' && (
+                  <button onClick={() => handleSelectComponent('orderhistory')} className="link-button">View Order History</button>
+                )}
+              </li>
+              <li>
+                {activeComponent !== 'viewwishlist' && (
+                  <button onClick={() => handleSelectComponent('viewwishlist')} className="link-button">View Wishlist</button>
+                )}
+              </li>
+              <li>
+                <button onClick={handleLogout} className="link-button">Log Out</button>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
+      {activeContent}
     </div>
-  );
+  )
 }
 
-export default ViewProfile;
+export default ViewProfile
