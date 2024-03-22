@@ -1,0 +1,2 @@
+# Do not redirect HTTP to HTTPS
+http://*/*  http://:splat  200
