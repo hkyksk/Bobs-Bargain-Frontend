@@ -88,7 +88,7 @@ const ProductList = ({ handleCart, wishlist, setWishlist, products, searchResult
     <Col key={index} lg={2} md={3} sm={6}>
       <div className="product-card">
         <img
-          src={`http://localhost:5173/public/${product.product_category_type_brand === 'NoBrand' ? product.product_category_type : product.product_category_type_brand}_Iconic.jpg`}
+          src={`/${product.product_category_type_brand === 'NoBrand' ? product.product_category_type : product.product_category_type_brand}_Iconic.jpg`}
           alt="Product Image"
         />
         <div className="product-details">
