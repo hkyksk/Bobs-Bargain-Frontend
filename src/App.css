@@ -6,13 +6,13 @@
 }
 
 body {
-  background-color: rgb(103, 125, 181); 
+  background-color: #179EDA; 
   margin: 0; 
   padding: 0; 
 }
 
 .header {
-  background-color: rgb(103, 125, 181); 
+  background-color: #179EDA; 
   width:100%;
   position: fixed; 
   z-index: 1000;
@@ -39,15 +39,16 @@ body {
 }
 
 .dashboard {
-  position: absolute;
   top: calc(15% + 1px);
   left: 0;
   width: 100%;
   overflow-x: hidden;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 .footer {
-  background-color: rgb(103, 125, 181); 
+  background-color: #179EDA; 
   border-top: 1px solid #ccc;
   display: flex; 
   justify-content: center; 
@@ -67,7 +68,7 @@ body {
 
 .header-content3 {
   margin-left: 40%;
-  margin-right: 0;
+  margin-right: -1%;
 
 }
 
@@ -78,7 +79,7 @@ body {
 }
 
 .footer {
-  background-color: rgb(103, 125, 181); 
+  background-color: #179EDA; 
   border-top: 1px solid #ccc;
   display: flex; 
   justify-content: center; 
@@ -101,18 +102,28 @@ body {
   list-style-type: none;
 }
 
+.footer-icon-cart {
+  width: 64px;
+  height: 64px; 
+  border-radius: 50%;
+  border: 1px solid black; 
+  background-color: #677DB5;
+}
+
 
 .footer-icon {
   width: 64px;
   height: 64px; 
   border-radius: 50%;
   border: 1px solid black; 
-  background-color: rgb(111, 194, 139);
+  background-color: #677DB5;
+
 }
 
 .footer-icon:active {
   color:yellow;
-  border-color: yellow; /
+  border-color: yellow; 
+  background-color: orangered;
 }
 
 .footer-button {
@@ -136,6 +147,7 @@ body {
   overflow: visible;
 }
 
+
 .no-padding {
    padding: 0 !important;
    margin: 0 !important;
@@ -154,6 +166,11 @@ body {
 
 *:focus {
   outline: none;
+}
+
+.welcome-btn {
+  margin-left:16%;
+  margin-right:16%;
 }
 
 .search-bar button {
@@ -178,7 +195,7 @@ body {
 
 .product-details {
   flex-grow: 1;
-  background-color: rgb(103, 125, 181); 
+  background-color: #179EDA; 
   border-radius: 0 0 10px 10px; 
 }
 
@@ -188,7 +205,7 @@ body {
   width: 30px;
   height: 30px;
   border: none;
-  background-color: purple;
+  background-color: orangered;
   color: white;
   font-weight: bold;
   border-radius: 20%;
@@ -275,6 +292,13 @@ input[type='button'] {
 }
 
 @media (max-width: 1000px) {
+  
+  .dashboard {
+    margin-top:20%;
+    margin-bottom:20%;
+  }
+
+
   .form-control {
   max-width: 80%;
   margin-left:10%;
@@ -296,6 +320,11 @@ input[type='button'] {
     text-align: center;
     max-width: 80%;
     margin-left:10%;
+  }
+
+  .dashboard {
+    margin-top:35%;
+    margin-bottom:35%;
   }
   
   .dashboard-profile {
@@ -340,7 +369,7 @@ input[type='button'] {
 }
 
 .heart-icon:hover {
-  color: orange;
+  color: orangered;
   font-size:36px;
   
 }
@@ -388,6 +417,18 @@ input[type='button'] {
 
 .logo:hover {
   animation: wobble 1.5s infinite; 
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-gap: 20px; 
+}
+
+.button-container2 {
+  display: grid;
+  margin-left:15%;
+  margin-right:15%;
 }
 
 @keyframes wobble {

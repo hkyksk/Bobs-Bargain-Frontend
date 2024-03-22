@@ -1,11 +1,11 @@
+/* eslint-disable react/prop-types */
 import RecommendedList from './RecommendedList'
 
-
-const RecommendedFeed = () => {
+const RecommendedFeed = ({ handleCart, products}) => {
   return (
     <div>
       <h3>Recommended Feed</h3>
-      <RecommendedList />
+      <RecommendedList handleCart={handleCart} products={products} />
     </div>
   )
 }

@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react'
 import Searchbar from './Header/Searchbar'
 import logo from '../assets/logo.svg'
 
-const Header = () => {
+const Header = ({ onSearch }) => {
   const [isWobbling, setIsWobbling] = useState(false);
 
   const handleMouseEnter = () => {
@@ -23,7 +24,7 @@ const Header = () => {
               <div className="header-content2 header-content4"><h1>Bargain</h1></div>
             </div>
             <div className="searchbar-container">
-              <Searchbar />
+              <Searchbar onSearch={onSearch}/>
             </div>
           </div>
   )

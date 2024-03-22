@@ -1,10 +1,11 @@
-import ProductList from './ProductList';
+/* eslint-disable react/prop-types */
+import ProductList from './ProductList'
 
-const CategoryFeed = () => {
+const CategoryFeed = ({ handleCart, wishlist, setWishlist , products, searchResults }) => {
   return (
     <div>
       <h3>Category Feed</h3>
-      <ProductList />
+      <ProductList handleCart={handleCart} wishlist={wishlist} setWishlist={setWishlist} products={products} searchResults={searchResults} />
     </div>
   )
 }
