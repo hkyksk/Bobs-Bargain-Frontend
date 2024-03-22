@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import ProductImage from '../../assets/images/Alpro-Blueberry-Soyghurt_Iconic.jpg'
+import ProductImage from '../../../public/Alpro-Blueberry-Soyghurt_Iconic.jpg'
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([])
